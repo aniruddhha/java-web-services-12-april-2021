@@ -24,7 +24,8 @@ public class ATMController {    // class
     @PostMapping("/deposit/{amount}")
     public String deposit(@PathVariable Integer amount) {
         if (amount <= 0) {
-            return  "Invalid Amount";
+//            return  "Invalid Amount";
+            throw new InvalidAmountException();
         }
         amt = amt + amount;
         return  "Amount deposit successfully "+amount;
