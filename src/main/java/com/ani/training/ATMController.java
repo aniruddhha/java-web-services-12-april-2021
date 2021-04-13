@@ -46,4 +46,9 @@ public class ATMController {    // class
         amt = amt - 10;
         return "Penalty Applied";
     }
+
+    @ExceptionHandler({ InvalidAmountException.class })
+    public String handleException(Exception e) {
+        return e.getMessage();
+    }
 }
