@@ -1,9 +1,6 @@
 package com.ani.training;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ATMController {    // class
@@ -17,7 +14,13 @@ public class ATMController {    // class
 
     @PostMapping("/deposit/{amount}")
     public String deposit(@PathVariable Integer amount) {
-        amt = amount;
+        amt = amt + amount;
         return  "Amount deposit successfully";
+    }
+
+    @DeleteMapping("/withdraw/{amount}")
+    public String withdraw(@PathVariable Integer amount) {
+        amt = amt - amount;
+        return  "Amount withdraw successfully";
     }
 }
