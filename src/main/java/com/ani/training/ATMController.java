@@ -15,12 +15,18 @@ public class ATMController {    // class
     @PostMapping("/deposit/{amount}")
     public String deposit(@PathVariable Integer amount) {
         amt = amt + amount;
-        return  "Amount deposit successfully";
+        return  "Amount deposit successfully "+amount;
     }
 
     @DeleteMapping("/withdraw/{amount}")
     public String withdraw(@PathVariable Integer amount) {
         amt = amt - amount;
-        return  "Amount withdraw successfully";
+        return  "Amount withdraw successfully "+amount;
+    }
+
+    @PutMapping("/penalty")
+    public String penalty() {
+        amt = amt - 10;
+        return "Penalty Applied";
     }
 }
