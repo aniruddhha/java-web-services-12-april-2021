@@ -34,7 +34,8 @@ public class ATMController {    // class
     @DeleteMapping("/withdraw/{amount}")
     public String withdraw(@PathVariable Integer amount) {
         if (amount <= 0) {
-            return  "Invalid Amount";
+            //return  "Invalid Amount";
+            throw new InvalidAmountException();
         }
         amt = amt - amount;
         return  "Amount withdraw successfully "+amount;
