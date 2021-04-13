@@ -6,6 +6,7 @@ package com.ani.training;
  *  - How do you throw exception ? -> throw new YourExceptionClass
  *  - How do you customize exception ? -> by extending to runtime exception class
  *  - How do you handle exception in spring boot ? -> by writing method with @ExceptionHandler annotation
+ *  - When java handles exception ? -> java handles exception at 2 places i.e. Compile time and Runtime
  * */
 public class InvalidAmountException extends RuntimeException {
 

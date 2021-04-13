@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 *  - What is Put ? -> putting/updating resource on the server
 *  - What is Post ? -> saving resource on the server
 *  - What is Delete ? -> deleting resource from server
+   - What is jar ? -> it is a bundle of final build, Java Archive file
+   - what is apache-tomcat ? -> apache is web server, tomcat is servlet container. Tomcat runs spring application and apache serves it over http.
 * * */
 
 @RestController
