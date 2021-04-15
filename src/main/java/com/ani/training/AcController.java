@@ -1,10 +1,7 @@
 package com.ani.training;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,5 +33,21 @@ public class AcController {
     public List<BankAccount> listAccount() {
         List<BankAccount> accounts = dao.findAll();
         return accounts;
+    }
+
+    @PutMapping("/update/{id}/{bal}")
+    public String updateBalance(@PathVariable Integer id, @PathVariable Integer bal) {
+        BankAccount ac = dao.findById(id).get(); // select * from accout where id = 321
+        ac.setBal(bal);
+        dao.save(ac);
+        return  "Balance Updated Successfully";
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteAccount(@PathVariable Integer id) {
+        BankAccount ac = dao.findById(id).get();
+        dao.delete(ac);
+
+        return  "Bank Account Deleted Successfully";
     }
 }
