@@ -47,6 +47,4 @@ public class BankAccount {
     public void setBal(Integer bal) {
         this.bal = bal;
     }
-
-
 }

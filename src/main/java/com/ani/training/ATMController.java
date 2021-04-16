@@ -36,7 +36,7 @@ public class ATMController {    // class
     public Integer checkBalance() {    // function
         return amt;
     }
-
+    @ApiResponse
     @PostMapping("/deposit/{amount}")
     public String deposit(@PathVariable Integer amount) {
         if (amount <= 0) {
@@ -59,7 +59,7 @@ public class ATMController {    // class
 
     @PutMapping("/penalty")
     @ApiOperation(value = "This service will help you to apply penalty")
-    @ApiResponse(message = "Penalty Applied Suucessfully", code = 200)
+    (message = "Penalty Applied Suucessfully", code = 200)
     public String penalty() {
         amt = amt - 10;
         return "Penalty Applied";
