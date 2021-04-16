@@ -1,5 +1,7 @@
 package com.ani.training;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -10,6 +12,17 @@ public class BankAccount {
     private Integer id;
     private String acNm;
     private Integer bal;
+
+    @JsonIgnore
+    private String ver;
+
+    public String getVer() {
+        return ver;
+    }
+
+    public void setVer(String ver) {
+        this.ver = ver;
+    }
 
     public Integer getId() {
         return id;
@@ -34,4 +47,6 @@ public class BankAccount {
     public void setBal(Integer bal) {
         this.bal = bal;
     }
+
+
 }

@@ -17,6 +17,7 @@ public class AcController {
         ac.setId(123);
         ac.setAcNm("Ani");
         ac.setBal(1234);
+        ac.setVer("1.1.3");
 
         dao.save(ac);
 
@@ -25,6 +26,7 @@ public class AcController {
 
     @PostMapping("/create")
     public String createNewAccountFromObject(@RequestBody BankAccount ac) {
+        ac.setVer("1.1.3");
         dao.save(ac); // insert query
         return "Account Created Successfully";
     }
