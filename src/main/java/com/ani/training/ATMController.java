@@ -1,6 +1,11 @@
 package com.ani.training;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.Local;
+import org.springframework.context.MessageSource;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Locale;
 /*
    - What is web service ? One software is calling method of another software, this mechanism is referred as web service.
    - What is http ? -> Hypertext Transfer Protocol. Generally Web Services Communicate over the http protocol.
@@ -19,6 +24,9 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ATMController {    // class
+
+    @Autowired
+    private MessageSource messageSource;
 
     private Integer amt = 0;
 
@@ -51,6 +59,11 @@ public class ATMController {    // class
     public String penalty() {
         amt = amt - 10;
         return "Penalty Applied";
+    }
+
+    @GetMapping("/msg")
+    public String intMsg(@RequestHeader(name="Accept-Language", required=false)Locale locale) {
+        return messageSource.getMessage("good.morning.message", null, locale);
     }
 
     @ExceptionHandler({ InvalidAmountException.class })
