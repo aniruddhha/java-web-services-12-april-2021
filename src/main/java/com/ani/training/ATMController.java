@@ -1,5 +1,7 @@
 package com.ani.training;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.core.Local;
 import org.springframework.context.MessageSource;
@@ -56,6 +58,8 @@ public class ATMController {    // class
     }
 
     @PutMapping("/penalty")
+    @ApiOperation(value = "This service will help you to apply penalty")
+    @ApiResponse(message = "Penalty Applied Suucessfully", code = 200)
     public String penalty() {
         amt = amt - 10;
         return "Penalty Applied";
