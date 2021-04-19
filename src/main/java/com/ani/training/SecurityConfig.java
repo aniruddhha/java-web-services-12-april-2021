@@ -1,10 +1,10 @@
 package com.ani.training;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+//import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 /**
  *  - What is basic authentication ? -> Every request should be protected by at least username and password is called basic auth..
@@ -12,7 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  *  - What configure method does ? -> it tell which api needs to authorized and authenticated using basic auth
  *  - What is configure global method ? -> it will configure username, password and role.
  * **/
-@Configuration
+/*@Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -32,4 +32,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .password("{noop}pass123")
                 .roles("USER");
     }
-}
+}*/
